@@ -52,11 +52,6 @@ function checkPrimeNumber(num) {
   return true;
 }
 
-/*
- *
- *
- */
-
 /**
  * @description
  - The loop runs from 2 to the square root of num (Math.sqrt(num))
