@@ -1,5 +1,5 @@
 /*
-[io-algo-str-08a51ed4] [Title]
+[io-algo-str-08a51ed4] [Reverse String]
 
 Write a JS program to reverse a string?
 */
@@ -17,11 +17,9 @@ Expected Output - retirW taerG a si eoD xelA
 ====================== [Example 3] ======================
 Inputs - ...My Country is Great...
 Expected Output - ...taerG si yrtnuoC yM... 
-
-===================== [Constraints] =====================
 */
 
-function reverseUsingLoop(stringData) {
+function reverseString(stringData) {
   let output = '';
   for (let i = stringData.length - 1; i >= 0; i--) {
     output += stringData[i];
@@ -29,29 +27,35 @@ function reverseUsingLoop(stringData) {
   return output;
 }
 
-function reverseUsingInbuiltFunctions(stringData) {
-  if (typeof stringData === 'string') {
-    const output = stringData.split('').reverse().join('');
-    return output;
-  }
-}
-
 function main() {
-  console.log(
-    reverseUsingLoop('INDIA'),
-    reverseUsingLoop('Alex Doe is a Great Writer'),
-    reverseUsingLoop('...My Country is Great...'),
-    '',
-  );
-
-  console.log(
-    reverseUsingInbuiltFunctions('INDIA'),
-    reverseUsingInbuiltFunctions('Alex Doe is a Great Writer'),
-    reverseUsingInbuiltFunctions('...My Country is Great...'),
-    '',
-  );
+  console.log(implementation1('INDIA'));
+  console.log(implementation2('INDIA'));
+  console.log(implementation3('INDIA'));
 }
 
 main();
 
 // Execute - node .\strings\io-algo-str-08a51ed4.js
+
+function implementation1(stringData) {
+  const output = [];
+  for (let i = stringData.length - 1, j = 0; i >= 0; i--, j++) {
+    output[j] = stringData[i];
+  }
+  return output.join('');
+}
+
+function implementation2(stringData) {
+  const output = [];
+  for (let i = stringData.length - 1; i >= 0; i--) {
+    output.push(stringData[i]);
+  }
+  return output.join('');
+}
+
+function implementation3(stringData) {
+  if (typeof stringData === 'string') {
+    const output = stringData.split('').reverse().join('');
+    return output;
+  }
+}
