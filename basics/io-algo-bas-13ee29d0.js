@@ -4,37 +4,35 @@
 Write a JS program to print multiplication table of the number n?
 */
 
-/* Notes
- */
-
 /* Examples and Constraints
 
 ====================== [Example 1] ======================
-Inputs -
-Expected Output -
+Inputs - 5
+Expected Output - Multiplication Table of 5 till n 
 
 ====================== [Example 2] ======================
-Inputs -
-Expected Output -
+Inputs - 10
+Expected Output - Multiplication Table of 10 till n
 
 ====================== [Example 3] ======================
-Inputs - 
-Expected Output -
-
-===================== [Constraints] =====================
+Inputs - 20
+Expected Output - Multiplication Table of 20 till n
 */
 
-function main() {}
+function printMultiplicationTable(tableOf, till = 20) {
+  if (isNaN(tableOf) || isNaN(till)) {
+    throw new Error('tableOf and till must be valid number');
+  }
+
+  for (let i = 1; i <= till; i += 1) {
+    console.log(`${tableOf} x ${i} = ${tableOf * i}`);
+  }
+}
+
+function main() {
+  printMultiplicationTable(5, 10);
+}
 
 main();
 
 // Execute - node .\basics\io-algo-bas-13ee29d0.js
-
-/**
-Function `fnName`: `param` => `void`
-- param: int
-
-#### Worst Case Scenarios
-#### Average Case Scenarios
-#### Best Case Scenarios
-*/
